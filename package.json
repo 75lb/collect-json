@@ -26,9 +26,9 @@
   },
   "dependencies": {
     "ansi-escape-sequences": "^2.1.0",
-    "collect-all": "0.0.0",
-    "stream-connect": "^0.1.0",
-    "stream-via": "0.0.0",
+    "collect-all": "~0.1.0",
+    "stream-connect": "~0.1.0",
+    "stream-via": "~0.1.0",
     "typical": "^2.3.0"
   },
   "devDependencies": {
