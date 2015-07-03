@@ -2,7 +2,7 @@
   "name": "collect-json",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "version": "0.0.0",
-  "description": "collect-json",
+  "description": "Returns a stream which becomes readable with a single value once all (valid) JSON is received.",
   "repository": "https://github.com/75lb/collect-json.git",
   "license": "MIT",
   "main": "./lib/collect-json.js",
@@ -22,10 +22,10 @@
   },
   "scripts": {
     "test": "tape test/*.js",
-    "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "dependencies": {
+    "ansi-escape-sequences": "^2.1.0",
     "collect-all": "0.0.0",
     "stream-connect": "^0.1.0",
     "stream-via": "0.0.0",
