@@ -46,7 +46,7 @@ test(".collectJson(throughFunc)", function(t){
     stream.end("[ 1, 2, 3 ]");
 });
 
-test(".collectJson.async(throughFunc)", function(t){
+test.skip(".collectJson.async(throughFunc)", function(t){
     var stream = collectJson.async(function(data, done){
         process.nextTick(function(){
             t.ok(Array.isArray(data));
