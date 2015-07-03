@@ -1,0 +1,37 @@
+{
+  "name": "collect-json",
+  "author": "Lloyd Brookes <75pound@gmail.com>",
+  "version": "0.0.0",
+  "description": "collect-json",
+  "repository": "https://github.com/75lb/collect-json.git",
+  "license": "MIT",
+  "main": "./lib/collect-json.js",
+  "bin": {
+    "collect-json": "bin/cli.js"
+  },
+  "keywords": [
+    "stream",
+    "collect",
+    "all",
+    "json",
+    "buffer",
+    "transform"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+  },
+  "dependencies": {
+    "collect-all": "0.0.0",
+    "stream-connect": "^0.1.0",
+    "stream-via": "0.0.0",
+    "typical": "^2.3.0"
+  },
+  "devDependencies": {
+    "tape": "^4.0.0"
+  }
+}
