@@ -2,6 +2,7 @@
 [![npm module downloads per month](http://img.shields.io/npm/dm/collect-json.svg)](https://www.npmjs.org/package/collect-json)
 [![Build Status](https://travis-ci.org/75lb/collect-json.svg?branch=master)](https://travis-ci.org/75lb/collect-json)
 [![Dependency Status](https://david-dm.org/75lb/collect-json.svg)](https://david-dm.org/75lb/collect-json)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 <a name="module_collect-json"></a>
 ## collect-json
@@ -23,19 +24,19 @@ simple example
 | [throughFunction] | <code>function</code> | an optional function to transform the data before passing it on. |
 
 **Example**  
-An example command-line client script - JSON received at stdin is stamped with `received` then written to stdout. 
+An example command-line client script - JSON received at stdin is stamped with `received` then written to stdout.
 ```js
-var collectJson = require("collect-json");
+var collectJson = require("collect-json")
 
 process.stdin
     .pipe(collectJson(function(json){
-        json.received = true;
-        return JSON.stringify(json);
+        json.received = true
+        return JSON.stringify(json)
     }))
     .on("error", function(err){
         // input from stdin failed to parse
     })
-    .pipe(process.stdout);
+    .pipe(process.stdout)
 ```
 
 * * *
