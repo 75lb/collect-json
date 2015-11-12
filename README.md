@@ -8,13 +8,6 @@
 ## collect-json
 Returns a stream which becomes readable with a single value once all (valid) JSON is received.
 
-## Synopsis
-At the terminal
-```sh
-$ echo '"simple"' | collect-json "return json + ' example\n'"
-simple example
-```
-
 <a name="exp_module_collect-json--collectJson"></a>
 ### collectJson([throughFunction]) ⇒ <code>[Duplex](https://nodejs.org/api/stream.html#stream_class_stream_duplex)</code> ⏏
 **Kind**: Exported function  
