@@ -1,7 +1,7 @@
 var test = require('tape')
 var collectJson = require('../')
 
-test('.collectJson()', function (t) {
+test('.collectJson() - without args converts a JSON string to an object', function (t) {
   var stream = collectJson()
 
   stream.on('readable', function () {
@@ -29,6 +29,7 @@ test('.collectJson() with input that fails to JSON.parse', function (t) {
 })
 
 test('.collectJson(throughFunc)', function (t) {
+  t.plan(3)
   var stream = collectJson(function (data) {
     t.ok(Array.isArray(data))
     return data.concat(4)
@@ -39,7 +40,6 @@ test('.collectJson(throughFunc)', function (t) {
     if (chunk) {
       t.ok(Array.isArray(chunk))
       t.deepEqual(chunk, [ 1, 2, 3, 4 ])
-      t.end()
     }
   })
   stream.end('[ 1, 2, 3 ]')
