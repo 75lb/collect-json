@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "collect-all": "~0.2.0",
-    "stream-connect": "~0.2.2",
+    "stream-connect": "^1",
     "stream-via": "~0.1.0"
   },
   "devDependencies": {
