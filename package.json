@@ -22,7 +22,7 @@
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "dependencies": {
-    "collect-all": "~0.2.0",
+    "collect-all": "^1.0.0",
     "stream-connect": "^1",
     "stream-via": "~0.1.0"
   },
