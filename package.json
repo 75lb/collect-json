@@ -1,7 +1,7 @@
 {
   "name": "collect-json",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Returns a stream which becomes readable with a single value once all (valid) JSON is received.",
   "repository": "https://github.com/75lb/collect-json.git",
   "license": "MIT",
