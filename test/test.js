@@ -1,6 +1,5 @@
 var test = require('tape')
 var collectJson = require('../')
-var fs = require('fs')
 
 test('.collectJson() - without args converts a JSON string to an object', function (t) {
   var stream = collectJson()
@@ -65,10 +64,12 @@ test.skip('.collectJson.async(throughFunc)', function (t) {
   stream.end('[ 1, 2, 3 ]')
 })
 
-test('big file', function (t) {
-  fs.createReadStream('./test/fixture/big-file.json')
-    .pipe(collectJson(function (data) {
-      t.strictEqual(data.length, 731)
-      t.end()
-    }))
+test('multiple chunks', function (t) {
+  var stream = collectJson(function (data) {
+    t.strictEqual(data.length, 2)
+    t.end()
+  })
+  var input = '[ { "one": 1 }, { "two": 2 } ]'
+  stream.write(input.substr(0, 5))
+  stream.end(input.substr(5))
 })
