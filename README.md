@@ -5,10 +5,12 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 <a name="module_collect-json"></a>
+
 ## collect-json
 Returns a stream which becomes readable with a single value once all (valid) JSON is received.
 
 <a name="exp_module_collect-json--collectJson"></a>
+
 ### collectJson([callback]) ⇒ <code>[Duplex](https://nodejs.org/api/stream.html#stream_class_stream_duplex)</code> ⏏
 **Kind**: Exported function  
 
@@ -34,4 +36,4 @@ process.stdin
 
 * * *
 
-&copy; 2015 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+&copy; 2015-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

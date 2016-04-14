@@ -1,5 +1,6 @@
 var test = require('tape')
 var collectJson = require('../')
+var fs = require('fs')
 
 test('.collectJson() - without args converts a JSON string to an object', function (t) {
   var stream = collectJson()
@@ -22,7 +23,7 @@ test('.collectJson() with input that fails to JSON.parse', function (t) {
   stream.on('readable', function () {
     t.fail("'readable' should never fire")
   })
-  stream.on('error', function (err) {
+  stream.on('error', function () {
     t.pass('failed, as planned')
   })
   stream.end('asdfadsf')
@@ -62,4 +63,12 @@ test.skip('.collectJson.async(throughFunc)', function (t) {
     }
   })
   stream.end('[ 1, 2, 3 ]')
+})
+
+test('big file', function (t) {
+  fs.createReadStream('./test/fixture/big-file.json')
+    .pipe(collectJson(function (data) {
+      t.strictEqual(data.length, 731)
+      t.end()
+    }))
 })
